@@ -119,7 +119,7 @@ body{
     color: var(--site-color);
     display: flex;
     /*background: url(../images/banner_top_v5.jpg) no-repeat center;*/
-    background: linear-gradient(to right, var(--main-color) 10%, rgba(255,255,255,0)),url(/image/img11.jpg) no-repeat center;
+    background: linear-gradient(to right, var(--main-color) 10%, rgba(255,255,255,0)),url(../image/img11.jpg) no-repeat center;
     height: 100vh;
     min-height: 500px;
     background-size: cover;
