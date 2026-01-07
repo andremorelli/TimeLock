@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+--main-color: #f8f8f8;
+--secundary-color: #E9E9E9;
+--terceira-color: #ffffff;
+--cinza-color: #828282;
+--fonte-color: #0f0f0f;
+--musgo-color: #0e5507;
+--verde-color: #44c436;
+}
+body{
+    background-color: var(--main-color);
+    color: var(--fonte-color);
+    font-family: 'Montserrat', sans-serif;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 10px;
+    margin: auto;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 4px 0;
+    background-color: var(--main-color);
+    /*border-bottom: solid var(--fonte-color) 1px;*/
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    
+}
+.navbar .logo a{
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: var(--fonte-color);
+}
+.navbar .logo a:hover{
+    color: var(--cinza-color);
+    background: none;
+    transition: all 0.3s ease;
+}
+.navbar .max-width{
+    display: flex;/*coloca os itens na mesma linha*/
+    align-items: center;/* centraliza os itens alinhados na tela*/
+    justify-content: space-between;/*vai dar um espaço por igual entre os itens*/
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 25px;
+    color: var(--fonte-color);
+}
+.navbar .menu li a:hover{
+    color: var(--musgo-color);
+    background: none;
+    transition: all 0.3s ease;
+}
+.menu-btn{
+    color: var(--fonte-color);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/*Responsividade do Menu*/
+@media(max-width:947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+
+    #menu-icon.active::before{
+        content:"\f00d";
+    }
+    .navbar .menu{
+        background-color: var(--main-color);
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    #menu-site.active{
+        left: 0;
+    }
+
+    .navbar .menu li{
+        display: block;        
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 13px 0;
+        font-size: 25px;
+
+    }
+}
+
+
+/*Estilização da Primeira Section*/
+.top{
+    color: var(--site-color);
+    display: flex;
+    /*background: url(../images/banner_top_v5.jpg) no-repeat center;*/
+    background: linear-gradient(to right, var(--main-color) 10%, rgba(255,255,255,0)),url(/image/img11.jpg) no-repeat center;
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+.top .max-width{
+    width: 100%;
+    display: flex;
+}
+.top .top-content .text-1{
+    font-size: 25px;
+}
+.top .top-content .text-2{
+    font-size: 55px;
+    font-weight: 400;
+    margin: -3px;
+}
+.top .top-content .text-3{
+    font-size: 32px;
+    margin: 5px 0;
+}
+.top .top-content a{
+    display: inline-block;
+    background: none;
+    color: var(--site-color);
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 2px solid var(--fonte-color);
+}
+.top .top-content a:hover{
+    color: var(--cinza-color);
+    background: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--cinza-color);
+}
+
+/*Inicio da Segunda section*/
+.services{
+    color: var(--fonte-color);
+    background-color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+    margin: 60px;
+}
+.services .title{
+    text-align: center;
+    margin: 40px;
+    font-weight: 400;
+    font-size: 35px;
+}
+.services .serv-content{
+    display: flex;
+    flex-wrap: wrap; /*itens quebram em multiplas linhas quando necessário de forma uniforme*/
+    align-items: center;
+    justify-content: space-between;
+}
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    background-color: var(--secundary-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+}
+
+/*Alterar a cor de fundo do card*/
+.services .serv-content .card:hover{
+    background-color: var(--cinza-color);
+    transition: all 0.8s ease;
+}
+/*aqui configura os ícones*/
+.services .serv-content .card i{
+    font-size: 50px;
+    color: var(--fonte-color);
+    transition: all 0.8s ease;
+}
+.services .serv-content .card:hover i{
+    color: var(--terceira-color);
+}
+.services .serv-content .card .box{
+    transition: all 0.8s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+/*aqui configura os textos do card*/
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.services .serv-content .card:hover .text{
+    color: var(--terceira-color);
+}
+.services .serv-content .card:hover p{
+    color: var(--terceira-color);
+}
+
+/*Responsividade dos cards*/
+@media (max-width: 947px){
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 690px){
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+/* Estilização da Terceira Section*/
+
+.premium{
+    color: var(--fonte-color);
+    background-color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+}
+.premium .title{
+    text-align: center;
+    margin: 50px 0;
+    font-weight: 400;
+    font-size: 35px;
+}
+.premium .premium-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.premium .premium-content .left{
+    width: 45%;
+}
+.premium .premium-content .left img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.premium .premium-content .right{
+    width: 55%;
+}
+.premium .premium-content .right .text{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.premium .premium-content .right p{
+    text-align: justify;
+}
+.premium .premium-content .right a{
+    display: inline-block;
+    background-color: none;
+    color: var(--fonte-color);
+    font-size: 20px;font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--fonte-color);
+}
+.premium .premium-content .right a:hover{
+    color: var(--cinza-color);
+    background: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--cinza-color);
+}
+
+/*Responsividade da Terceira Section*/
+@media(max-width: 1104px){
+    .premium .premium-content .left img{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media(max-width: 947px){
+    .premium .premium-content .column{
+        width: 100%;
+    }
+    .premium .premium-content .left{
+        display: flex;
+        justify-content: center;
+        margin-left: 0 auto 60px;
+    }
+    .premium .premium-content .right{
+        flex: 100%;
+    }
+}
+
+/*Estilização do footer*/
+footer{
+    padding: 25px 23px;
+    text-align: center;  
+    background-color: var(--secundary-color); 
+    margin-top: 20px;    
+}
+
+footer img{
+    color: var(--fonte-color);
+}
+.scale-on-hover {
+    display: inline-block;
+    transition: transform 0.8s ease;
+}
+    
+.scale-on-hover:hover {
+    transform: scale(1.05);
+}
+    
+/* Opcional: melhorar aparência da imagem */
+.scale-on-hover img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
