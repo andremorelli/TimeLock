@@ -410,3 +410,171 @@ p{
     object-fit: cover;/* controla a imagem deve ser redimencionada*/
     border-radius: 6px;
 }
+/* Resposividade Sobre a Empresa*/
+@media (max-width: 1104px){
+    .about .about-content .about-content-dois .left .right img{
+        width: 300px;
+        height: 300px;
+    }
+    .about .about-content .right{
+        padding-left: 10px ;
+    }
+    .about .about-content-dois .left{
+        padding-left: 10px ;
+    }
+}
+@media (max-width: 947px){
+    .about .about-content .about-content-dois .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+        padding-left: 0;
+    }
+    .about .about-content-dois .right{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content-dois .left{
+        flex: 100%;
+        padding-right: 0;
+    }
+}
+
+/***********************************/
+/*Importantissimo inicio de outra página*/
+/*Página Contato*/
+
+.contact{
+    color: var(--fonte-color);
+    background-color: var(--secundary-color);
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.contact .title{
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    font-weight: 400;
+    font-size: 35px;
+}
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: var(--fonte-color);
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: var(--fonte-color);
+}
+
+
+/*Estilo da coluna direita*/
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .field input,
+.contact .right form .field textarea{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    /*outline: none;*/
+    padding: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .field textarea:focus{
+    border-color: var(--musgo-color);
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button-area{
+    display: flex;
+    align-items: center;
+}
+.right form .button-area button{
+    background-color: none;
+    color: var(--fonte-color);
+    display: block;
+    width: 160px !important;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    border: 2px solid var(--fonte-color);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+.right form .button-area button:hover{
+    color: var(--cinza-color);
+    border: 2px solid var(--cinza-color);
+    background-color: none;
+}
+
+/* aqui a responsividade da página contato*/
+@media (max-width: 947px){
+    .contact .contact-content .column{
+        width: 100%;
+        margin-top: 35px;
+    }
+}
+@media (max-width: 500px){
+    .contact .title{
+        margin-top: 50px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+}
