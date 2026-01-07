@@ -336,3 +336,77 @@ footer img{
     vertical-align: middle;
     margin-right: 5px;
 }
+
+/***********************************/
+/*Importantissimo inicio de outra página*/
+/*Sobre Empresa*/
+.about{
+    color: var(--fonte-color);
+    background-color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+}
+.about .title{
+    text-align: center;
+    margin-bottom: 50px;    
+    font-weight: 400;
+    font-size: 35px;
+    padding-top: 50px;
+}
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    background-color: var(--secundary-color);
+    border-radius: 6px;
+    padding: 30px;
+}
+.about .about-content .left img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;/* controla a imagem deve ser redimencionada*/
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 60%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+p{
+    margin-bottom: 20px;
+}
+/*Segunda coluna*/
+.about .about-content-dois{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    background-color: var(--secundary-color);
+    border-radius: 6px;
+    padding: 30px;
+}
+.about .about-content-dois .left{
+    width: 60%;
+}
+.about .about-content-dois .left .text{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.about .about-content-dois .left p{
+    text-align: justify;
+}
+.about .about-content-dois .right img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;/* controla a imagem deve ser redimencionada*/
+    border-radius: 6px;
+}
