@@ -367,6 +367,10 @@ footer img{
     height: 400px;
     object-fit: cover;/* controla a imagem deve ser redimencionada*/
     border-radius: 6px;
+     transition: all 0.8s ease;    
+}
+.about .about-content .left img:hover{
+     transform: scale(1.05);
 }
 .about .about-content .right{
     width: 60%;
@@ -410,6 +414,10 @@ p{
     object-fit: cover;/* controla a imagem deve ser redimencionada*/
     border-radius: 6px;
 }
+.about .about-content-dois .right img:hover{
+     transition: all 0.8s ease;
+     transform: scale(1.05);
+}
 /* Resposividade Sobre a Empresa*/
 @media (max-width: 1104px){
     .about .about-content .about-content-dois .left .right img{
@@ -451,6 +459,9 @@ p{
 /*Importantissimo inicio de outra página*/
 /*Página Contato*/
 
+footer{
+    margin: 0;
+}
 .contact{
     color: var(--fonte-color);
     background-color: var(--secundary-color);
