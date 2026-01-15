@@ -240,6 +240,7 @@ body{
     color: var(--fonte-color);
     background-color: var(--main-color);
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
 }
 .premium .title{
     text-align: center;
@@ -261,6 +262,10 @@ body{
     height: 400px;
     object-fit: cover;
     border-radius: 6px;
+    transition: all 0.8s ease;
+}
+.premium .premium-content .left img:hover{
+    transform: scale(1.05);
 }
 .premium .premium-content .right{
     width: 55%;
@@ -310,6 +315,45 @@ body{
         flex: 100%;
     }
 }
+
+
+
+/*Video estilização - Página Home*/
+#hero{
+    position: relative;/*aqui sera relativo a tela do usuario(vai se adequar a tela do usuario*/
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+#hero video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#hero .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hero .overlay .max-width{
+    width: 100%;
+}
+#hero .overlay h1{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3rem;
+}
+
+
 
 /*Estilização do footer*/
 footer{
@@ -367,7 +411,7 @@ footer img{
     height: 400px;
     object-fit: cover;/* controla a imagem deve ser redimencionada*/
     border-radius: 6px;
-     transition: all 0.8s ease;    
+    transition: all 0.8s ease;    
 }
 .about .about-content .left img:hover{
      transform: scale(1.05);
