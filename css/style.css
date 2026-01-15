@@ -240,7 +240,7 @@ body{
     color: var(--fonte-color);
     background-color: var(--main-color);
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .premium .title{
     text-align: center;
