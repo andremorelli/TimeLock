@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <!--<base href="http://127.0.0.1:5501/">-->
     <title>Time Lock</title>
 </head>
 <body>
@@ -79,20 +80,26 @@
                     <div class="text">
                         Mensagem de Contato
                     </div>
-                    <form>
+                    <form action="https://formsubmit.co/morelliduarte@yahoo.com.br" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Adicione também estas linhas para melhor formatação -->
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Novo contato do site">
+                        <!--Redirencionar o formulario-->
+                        <input type="hidden" name="_next" value="https://andremorelli.github.io/TimeLock/obrigado.html">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Digite o nome" required>
+                                <input type="text" name="nome" placeholder="Digite o nome" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Digite o e-mail">
+                                <input type="email" name="email" placeholder="Digite o e-mail" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Digite o assunto" required>
+                            <input type="text" name="asunto" placeholder="Digite o assunto" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Digite o conteúdo" required></textarea>
+                            <textarea name="mensagem" cols="30" rows="10" placeholder="Digite o conteúdo" required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Enviar</button>
