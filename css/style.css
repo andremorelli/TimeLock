@@ -354,6 +354,76 @@ body{
 }
 
 
+/*Estilização da página produtos*/
+.products{
+    color: var(--fonte-color);
+    background-color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+
+}
+.products .title{
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 400;
+    font-size: 35px;
+}
+.products .products-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+}
+.products .products-content .card{
+    width: calc(33% - 20px);
+    background: var(--secundary-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    display: flex;
+    flex-direction: column;    
+}
+
+/*aqui vamos alterar a cor de fundo do cartão*/
+.products .products-content .card:hover{
+    background-color: var(--cinza-color);
+    color: white;
+}
+.products .products-content .card .box{
+    transition: all 0.8s ease;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.products .products-content .card:hover .box{
+    transform: scale(1.05);
+}
+
+/*********************************************/
+
+.products .products-content .card img{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+}
+.products .products-content .card .text-products{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    padding-bottom: 20px;
+}
+.products .products-content .card p{
+    text-align: justify; 
+    
+}
+
+
+
 
 /*Estilização do footer*/
 footer{
