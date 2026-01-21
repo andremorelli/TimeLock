@@ -4,27 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- METAS PARA PREVENIR CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/obrigado.css">
     
     <title>Mensagem Enviada | TimeLock</title>
-    
-        
 </head>
 <body>
+    <!--Background animado-->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
     <div class="thank-you-container">
         <!--ícone de sucesso-->
         <div class="success-icon"></div>
 
         <!--Mensagem Principal-->
-        <h1>Mensagem Enviada! </h1>
+        <h1>Mensagem Enviada!</h1>
         <p>Obrigado pelo seu contato. Sua mensagem foi recebida com sucesso e responderemos em breve</p>
 
         <!--Botões de ação-->
         <div class="buttons">
-            <a href="contato.html" class="btn btn-primary">Voltar para o Início</a>
+            <!-- BOTÃO CORRETO: Voltar para HOME (não para contato) -->
+            <button id="voltar-home-btn" class="btn btn-primary">
+                <i class="fas fa-home"></i> Voltar para Home
+            </button>
+            
+            <!-- Link alternativo (escondido) -->
+            <a href="index.html" id="link-home-escondido" style="display: none;"></a>
         </div>
     </div>
+
+    <!-- SCRIPT CORRETO -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('voltar-home-btn');
+        const linkEscondido = document.getElementById('link-home-escondido');
+        
+        btn.addEventListener('click', function() {
+            console.log('Redirecionando para Home...');
+            
+            // Método 1: Força navegação limpa
+            const timestamp = Date.now();
+            const random = Math.random().toString(36).substring(2, 15);
+            
+            // Redireciona com parâmetros que QUEBRAM o cache
+            window.location.href = 'index.html?force=' + timestamp + '&r=' + random + '&from=obrigado';
+            
+            // Método 2: Fallback após 3 segundos
+            setTimeout(function() {
+                if (window.location.href.includes('obrigado')) {
+                    console.log('Fallback: usando navegação alternativa');
+                    linkEscondido.click();
+                }
+            }, 3000);
+        });
+        
+        // Também permite clique com direito/abrir em nova aba
+        btn.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            window.open('index.html', '_blank');
+        });
+    });
+    </script>
+    
+    <!-- NÃO carregue app.js aqui (não é necessário) -->
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -380,11 +380,11 @@ body{
     background: var(--secundary-color);
     text-align: center;
     border-radius: 6px;
-    padding: 50px 25px;
+    padding: 30px 20px;
     cursor: pointer;
     transition: all 0.8s ease;
-    display: flex;
-    flex-direction: column;    
+    margin-bottom: 20px;
+    box-sizing: border-box;  
 }
 
 /*aqui vamos alterar a cor de fundo do cartão*/
@@ -406,10 +406,10 @@ body{
 
 .products .products-content .card img{
     width: 100%;
+    height: 200px; /* Altura fixa para uniformidade */
+    object-fit: cover; /* Mantém proporção */
     border-radius: 8px;
     margin-bottom: 15px;
-    height: 200px;
-    object-fit: cover;
 }
 .products .products-content .card .text-products{
     font-size: 25px;
@@ -419,8 +419,200 @@ body{
 }
 .products .products-content .card p{
     text-align: justify; 
+    line-height: 1.6;
+    font-size: 14px; /* Tamanho menor se necessário */
     
 }
+
+/* Adicione media queries para responsividade */
+@media (max-width: 1200px) {
+    .products .products-content .card {
+        width: calc(50% - 20px); /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .products .products-content .card {
+        width: 100%; /* 1 coluna em mobile */
+    }
+}
+
+
+/*******************************************/
+/*Estilização do carrocel*/
+/* ===== CARROSSEL SIMPLES CORRETO ===== */
+.carrocel {
+    width: 100%;
+    margin: 60px 0;
+    position: relative;
+    background-color: var(--main-color);
+    padding: 40px 0;
+}
+
+.carrocel .max-width {
+    position: relative;
+}
+.carrocel .title{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-weight: 400;
+}    
+
+/* Container do slide */
+.carrocel .slide {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Itens do carrossel - CORREÇÃO ESSENCIAL */
+.carrocel .slide .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Primeiro item visível */
+.carrocel .slide .item:first-child {
+    opacity: 1;
+}
+
+/* Conteúdo dentro dos itens */
+.carrocel .slide .item .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.carrocel .slide .item .content .name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carrocel .slide .item .content .descr {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.carrocel .slide .item .content button {
+    padding: 12px 30px;
+    background: var(--verde-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carrocel .slide .item .content button:hover {
+    background: var(--musgo-color);
+    transform: translateY(-3px);
+}
+
+/* Botões de navegação - POSICIONAMENTO CORRETO */
+.carrocel .button {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.carrocel .button button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carrocel .button button:hover {
+    background: rgba(0,0,0,0.8);
+    transform: scale(1.1);
+}
+
+/* Indicadores (opcional) */
+.carrocel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carrocel-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carrocel-indicators .indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carrocel .slide {
+        height: 400px;
+    }
+    
+    .carrocel .slide .item .content {
+        padding: 20px;
+    }
+    
+    .carrocel .slide .item .content .name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrocel .slide {
+        height: 300px;
+    }
+    
+    .carrocel .button button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
 
 
 
@@ -703,4 +895,58 @@ footer{
     .contact .right form .email{
         margin: 0;
     }
+}
+
+
+
+
+
+
+
+/*****************************************/
+
+/* ===== GARANTIA DEFINITIVA DO CARROSSEL ===== */
+.carrocel {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.carrocel .slide {
+    min-height: 500px !important;
+    display: block !important;
+    position: relative !important;
+}
+
+.carrocel .slide .item {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Garante que primeiro item seja visível SEMPRE */
+.carrocel .slide .item:first-child {
+    opacity: 1 !important;
+    z-index: 2 !important;
+}
+
+/* Fallback se JS falhar */
+.no-js .carrocel .slide .item:not(:first-child) {
+    display: none !important;
+}
+
+/* Cores de fallback se imagens não carregarem */
+.carrocel .slide .item {
+    background-color: var(--musgo-color) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Debug visual */
+body[data-from-obrigado="true"] .carrocel {
+    border: 3px solid #44c436 !important;
 }
