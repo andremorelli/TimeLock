@@ -268,12 +268,13 @@ body{
     transform: scale(1.05);
 }
 .premium .premium-content .right{
-    width: 55%;
+    width: 55%;    
 }
 .premium .premium-content .right .text{
     font-size: 25px;
     font-weight: 400;
     margin-bottom: 10px;
+    
 }
 .premium .premium-content .right p{
     text-align: justify;
@@ -610,6 +611,147 @@ body{
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+
+/* ===== PARALLAX EFFECT - CASES DE SUCESSO ===== */
+
+/* Container principal dos cases */
+.cliente-final{
+    text-align: center;
+    margin: 40px;    
+    font-size: 30px;
+}
+
+.case {
+    position: relative;
+    width: 100%;
+    margin: 60px 0;
+}
+
+/* Imagens com efeito parallax */
+.pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
+    position: relative;
+    opacity: 0.9;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efeito parallax */
+    min-height: 600px; /* Altura mínima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Alturas específicas para cada imagem */
+.pimg1 {
+    background-image: url('../img/tres_rios.png');
+}
+
+.pimg2 {
+    background-image: url('../img/santo_agostinho.png');
+}
+
+.pimg3 {
+    background-image: url('../img/helbor_office.png');
+}
+
+.pimg4 {
+    background-image: url('../img/bh_shopping.png');
+}
+
+.pimg5 {
+    background-image: url('../img/bosque_monteiro.png');
+}
+
+/* Seções de texto */
+.section {
+    text-align: center;
+    padding: 80px 20px;
+    line-height: 1.8;
+}
+
+.section-dark {
+    background-color: var(--fonte-color);
+    color: var(--terceira-color);
+}
+
+.section-dark h2 {
+    color: var(--terceira-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.section-dark p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-dark strong {
+    color: var(--verde-color);
+}
+
+/* Texto sobre as imagens */
+.ptext {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.ptext .border {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--terceira-color);
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.ptext .border.trans {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--terceira-color);
+}
+
+/* Overlay escuro para melhor legibilidade */
+.pimg1::before, .pimg2::before, .pimg3::before, 
+.pimg4::before, .pimg5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
+        min-height: 400px;
+        background-attachment: scroll; /* Remove parallax em mobile */
+    }
+    
+    .ptext .border {
+        font-size: 1.3rem;
+        padding: 15px 25px;
+        letter-spacing: 2px;
+    }
+    
+    .section {
+        padding: 50px 15px;
+    }
+    
+    .section-dark h2 {
+        font-size: 2rem;
     }
 }
 
